@@ -1,0 +1,71 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "Routes": [
+    {
+      "DownStreamPathTemplate": "/api/Vehicle",
+      "DownStreamScheme": "https",
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7058"
+        }
+      ],
+      "UpStreamTemplate": "/gateway/vehicle",
+      "UpStreamHttpMethod": ["GET","POST"]
+    },
+   {
+      "DownStreamPathTemplate": "/api/Vehicle/{id}",
+      "DownStreamScheme": "https",
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7058"
+        }
+      ],
+      "UpStreamTemplate": "/gateway/vehicle/{id}",
+      "UpStreamHttpMethod": ["GET","PUT","DELETE"]
+    },
+   {
+      "DownStreamPathTemplate": "/api/Customer",
+      "DownStreamScheme": "https",
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7046"
+        }
+      ],
+      "UpStreamTemplate": "/gateway/customer",
+      "UpStreamHttpMethod": ["POST"]
+    },
+   {
+      "DownStreamPathTemplate": "/api/Reservation",
+      "DownStreamScheme": "https",
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7212"
+        }
+      ],
+      "UpStreamTemplate": "/gateway/reservation",
+      "UpStreamHttpMethod": ["GET"]
+    },
+   {
+      "DownStreamPathTemplate": "/api/Reservation/{id}",
+      "DownStreamScheme": "https",
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7212"
+        }
+      ],
+      "UpStreamTemplate": "/gateway/reservation/{id}",
+      "UpStreamHttpMethod": ["PUT"]
+    }
+  ]
+}
